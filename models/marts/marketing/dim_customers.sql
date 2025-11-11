@@ -15,6 +15,7 @@ payment_sum as (
     order_id,
         sum(amount) as total_payment_amount
     from {{ ref('stg_stripe__payments') }}
+    where status = 'success'
     group by 1
 ),
 
@@ -71,4 +72,4 @@ final as (
     left join customer_payments using (customer_id)
 )
 
-select sum(total_spent) from final
+select * from final
