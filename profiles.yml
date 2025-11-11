@@ -1,0 +1,13 @@
+default:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      threads: 16
+      account: RVDBCYM-RD05334
+      user: dbtmjh
+      database: analytics
+      warehouse: transforming
+      schema: dbt_mjh
+      password: h@llberg10L3if
+      role: ACCOUNTADMIN
