@@ -6,4 +6,4 @@ SELECT
     amount / 100 as amount
     
 
-FROM raw.stripe.payment
+FROM {{source('stripe', 'payment')}}
